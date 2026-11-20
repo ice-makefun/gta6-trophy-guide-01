@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vice State Trophy Guide — GTA VI Platinum Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="top" class="masthead">
+  <div class="masthead-inner">
+    <div>
+      <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; Offline guide &amp; tracker</p>
+      <h1>Vice State Trophy Guide</h1>
+      <p class="lede">Every one of the 55 official trophies, with its own guide and sources, a saved checklist, a platinum roadmap and the missable flags — built from the official trophy list. No account, no network, no spoilers unless you ask for them.</p>
+    </div>
+    <div class="platinum-card" id="platinumCard">
+      <div class="big-count"><span id="earnedCount">0</span><span class="of">/ 55</span></div>
+      <div class="platinum-label">trophies earned</div>
+      <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+      <div class="platinum-meta"><span id="progressPct">0%</span> to the platinum &middot; <span id="platinumState">Vice Got a Price! locked</span></div>
+      <div class="grade-line"><span class="grade-dot platinum"></span>1 Platinum &nbsp;<span class="grade-dot gold"></span>2 Gold &nbsp;<span class="grade-dot silver"></span>6 Silver &nbsp;<span class="grade-dot bronze"></span>46 Bronze</div>
+    </div>
+  </div>
+</header>
+
+<nav id="tabs" class="tabs" aria-label="Guide sections">
+  <button class="tab active" data-tab="tracker" type="button">Tracker</button>
+  <button class="tab" data-tab="roadmap" type="button">Platinum Roadmap</button>
+  <button class="tab" data-tab="missables" type="button">Missables <span class="tab-badge">1</span></button>
+</nav>
+
+<main id="main">
+  <section id="view-tracker" class="view active" aria-label="Trophy tracker">
+    <div id="toolbar" class="toolbar">
+      <input id="searchBox" type="search" placeholder="Search a trophy, mission or keyword…" aria-label="Search trophies">
+      <select id="gradeFilter" aria-label="Filter by grade">
+        <option value="all">All grades</option>
+        <option value="platinum">Platinum</option>
+        <option value="gold">Gold</option>
+        <option value="silver">Silver</option>
+        <option value="bronze">Bronze</option>
+      </select>
+      <select id="earnedFilter" aria-label="Filter by earned state">
+        <option value="all">Earned &amp; unearned</option>
+        <option value="earned">Earned only</option>
+        <option value="unearned">Not earned yet</option>
+      </select>
+      <label class="spoiler-toggle" title="Hide the names and descriptions of story trophies until you earn them">
+        <input id="spoilerToggle" type="checkbox"> <span>Hide story spoilers</span>
+      </label>
+      <div class="toolbar-actions">
+        <button id="exportBtn" type="button">Export progress</button>
+        <button id="importBtn" type="button">Import progress</button>
+        <input id="importFile" type="file" accept="application/json,.json" hidden>
+        <button id="resetBtn" type="button" class="danger">Reset</button>
+      </div>
+    </div>
+    <div id="kindChips" class="chips" aria-label="Filter by kind"></div>
+    <p id="listMeta" class="list-meta"></p>
+    <div class="tracker-grid">
+      <div id="trophyList" class="trophy-list" role="list"></div>
+      <aside id="detailPane" class="detail-pane" aria-live="polite">
+        <p class="detail-empty">Select a trophy on the left to read its guide and sources.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section id="view-roadmap" class="view" aria-label="Roadmap to the platinum">
+    <p class="section-intro">Three stages, about 200 hours in total (PowerPyx rates the platinum 4/10). One playthrough is enough: there is no mission replay and no New Game+, but free roam continues after the story and nothing on the 100% checklist is missable. Save manually at the start of every chapter.</p>
+    <div id="roadmapStages"></div>
+    <div class="roadmap-note">
+      <h3>How the stages were built</h3>
+      <p>Stage order follows the official descriptions: story trophies first (chapters and missions in order), then the 100% completion checklist for the Gold <strong>A Long Road</strong>, then the stranger strands and cleanup. Counts (200 of 277 vehicles, 100 of 255 animals, 70 of 80 challenges, 39 gang operations, 22 bank jobs, 7 payday loan jobs, 8 bank vault robberies) come from PowerPyx and GTABase. Sources for each stage are listed under the stage.</p>
+    </div>
+  </section>
+
+  <section id="view-missables" class="view" aria-label="Missable trophies">
+    <p class="section-intro">Only one trophy is possibly missable. Everything else can be earned after the story in free roam.</p>
+    <div id="missableList"></div>
+    <div class="safety-box">
+      <h3>Why the rest are safe</h3>
+      <ul>
+        <li><strong>No mission replay, no New Game+.</strong> Keep a manual save at the start of every chapter and one before the final mission — Output Lag and PowerPyx both recommend this.</li>
+        <li><strong>Cheats disable trophies and saving</strong> for that session, so keep them off your trophy run (GTABase).</li>
+        <li><strong>No online trophies.</strong> All 55 are single-player; GTA VI launches as a single-player game (PowerPyx, GTABase).</li>
+        <li><strong>100% completion is not everything.</strong> The checklist asks for part of each category (for example 15 of 18 meditation spots), so a missed collectible rarely blocks the Gold (PowerPyx).</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer id="sourcesFooter" class="sources">
+  <h2>Sources</h2>
+  <p>Names, descriptions and grades are the official list as PlayStation publishes it, via Exophase and PSNProfiles. Every guide is written in our own words for this guide; each trophy names its sources beside its guide. A source link opens only when you follow it — this app makes no network request of its own.</p>
+  <ul id="sourceList"></ul>
+  <p class="fineprint">Unofficial fan guide. Not affiliated with Rockstar Games, Take-Two Interactive or Sony Interactive Entertainment. No Rockstar logo, artwork or game screenshots are used. Progress is stored only in your browser (localStorage); export and import keep it in a file you own.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
